@@ -135,8 +135,8 @@ public class CassandraConnection extends AbstractConnection implements Connectio
         logger.info("Connected to cluster: %s\n",
             metadata.getClusterName());
         for (Host aHost : metadata.getAllHosts()) {
-        	logger.info("Datacenter: %s; Host: %s; Rack: %s\n",
-                aHost.getDatacenter(), aHost.getAddress(), aHost.getRack());
+        	logger.info(String.format("Datacenter: %s; Host: %s; Rack: %s\n",
+                aHost.getDatacenter(), aHost.getAddress(), aHost.getRack()));
         }
 
         Iterator<Host> hosts = metadata.getAllHosts().iterator();
